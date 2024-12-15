@@ -315,12 +315,8 @@
     -- Criar Tabs
     local Tabs = {
         AimBot = Window:AddTab({ Title = "Aimbot", Icon = "crosshair" }),
-        Espaco1 = Window:AddTab({ Title = "", Icon = "" }),
         Self = Window:AddTab({ Title = "Self", Icon = "user" }),
-        Espaco2 = Window:AddTab({ Title = "", Icon = "" }),
         Esp = Window:AddTab({ Title = "Esp", Icon = "box" }),
-        Espaco3 = Window:AddTab({ Title = "", Icon = "" }),
-        Teleport = Window:AddTab({ Title = "Teleport", Icon = "map-pin" }),
     }
 
     -- Criar Toggle para Box ESP
@@ -376,38 +372,6 @@
     ToggleAimbot:OnChanged(function(state)
         toggleNoClip(state)
     end)
-
-    -- tp ak
-
-    Tabs.Teleport:AddButton({
-        Title = "Teleport Para Ak47 ( Prison Life )",
-        Callback = function()
-            -- Coordenadas de teletransporte
-            local position = Vector3.new(88.5654297, 149.030029, 2475.28198)
-            local orientation = CFrame.new(position, position + Vector3.new(-1, 0, 0)) -- Direção para a qual o personagem olha
-
-            -- Teletransportar o personagem
-            if char and char:FindFirstChild("HumanoidRootPart") then
-                char.HumanoidRootPart.CFrame = orientation
-            end
-        end
-    })
-
-    -- tp prisioneiros
-
-    Tabs.Teleport:AddButton({
-        Title = "Teleport Para prisioneiros ( prison life)",
-        Callback = function()
-            -- Coordenadas de teletransporte
-            local position = Vector3.new(1958.57385, 155.219513, 2849.51025, 0, 1, 0, 1, 0, 0, 0, 0, -1)
-            local orientation = CFrame.new(position, position + Vector3.new(-1, 0, 0)) -- Direção para a qual o personagem olha
-
-            -- Teletransportar o personagem
-            if char and char:FindFirstChild("HumanoidRootPart") then
-                char.HumanoidRootPart.CFrame = orientation
-            end
-        end
-    })
 
 
 
